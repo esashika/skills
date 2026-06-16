@@ -2,8 +2,8 @@
 
 ## Architecture & Naming
 - This is a monorepo for custom agent skills.
-- All skills must reside in their own subdirectory under `skills/` (e.g., `skills/gh-split-commits/`).
-- The primary configuration and instructions for each skill live in `skills/<skill-name>/SKILL.md`.
+- All skills must reside in namespace subdirectories under `skills/` (e.g., `skills/ghr/gh-split-commits/` for GitHub-related skills).
+- The primary configuration and instructions for each skill live in `skills/<namespace>/<skill-name>/SKILL.md`.
 - **Naming Convention:** Skills designed for GitHub or git automation MUST be prefixed with `gh-` (e.g., `gh-pr-create`).
 
 ## Skill File Template (`SKILL.md`)
