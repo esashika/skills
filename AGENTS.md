@@ -1,8 +1,8 @@
 # OpenCode Skills Monorepo Guidelines
 
 ## Architecture & Naming
-- This is a monorepo for custom agent skills.
-- All skills must reside in namespace subdirectories under `skills/` (e.g., `skills/ghr/gh-split-commits/` for GitHub-related skills).
+- This is a monorepo for custom agent skills intended to be distributed and installed across different environments.
+- All skills must reside in namespace subdirectories under `skills/` (e.g., `skills/ghr/gh-split-commits/` for GitHub-related skills) to keep the root tidy and allow users to install entire namespaces.
 - The primary configuration and instructions for each skill live in `skills/<namespace>/<skill-name>/SKILL.md`.
 - **Naming Convention:** Skills designed for GitHub or git automation MUST be prefixed with `gh-` (e.g., `gh-pr-create`).
 
