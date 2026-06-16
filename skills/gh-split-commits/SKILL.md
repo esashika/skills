@@ -1,9 +1,9 @@
 ---
-name: split-commits
+name: gh-split-commits
 description: Split Git commits by diff hunks to create clean, scoped, and Conventional Commits compliant changes.
 ---
 
-# Split Commits
+# GitHub Split Commits
 
 Use this skill to turn a mixed working tree into clean, scoped commits following the Conventional Commits specification.
 

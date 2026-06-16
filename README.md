@@ -6,7 +6,7 @@ A monorepo containing a collection of custom skills designed to automate and enf
 
 All individual skills are located in the `skills/` directory.
 
-- **`split-commits`**: Intelligently splits mixed working tree changes into scoped, Conventional Commits compliant commits.
+- **`gh-split-commits`**: Intelligently splits mixed working tree changes into scoped, Conventional Commits compliant commits.
 - **`gh-release-create`**: Analyzes the git history, calculates the next Semantic Version (SemVer), and creates a GitHub Release.
 - **`gh-pr-create`**: Automates the creation of GitHub Pull Requests.
 - **`gh-pr-review`**: Performs focused local code reviews on GitHub Pull Requests.
