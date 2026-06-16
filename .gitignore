@@ -1,0 +1,7 @@
+# Ignore agent instructions file
+AGENTS.md
+
+# OS files
+.DS_Store
+skills/.DS_Store
+**/ .DS_Store
