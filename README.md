@@ -1,53 +1,72 @@
 # My Custom OpenCode Skills
 
-Welcome! This is my personal monorepo containing a collection of custom agent skills that I created to automate and enforce standards in my daily software engineering tasks, specifically tailored for Git, GitHub, and other advanced development workflows.
+A personal monorepo containing a curated collection of tailor-made agent skills. These skills are built to supercharge my OpenCode agent's capabilities—automating repetitive tasks, enforcing elite standards, and streamlining complex Git & GitHub workflows.
 
-These skills are designed to extend my OpenCode agent's capabilities, allowing it to execute repetitive tasks with precision, safety, and speed.
-
----
-
-## 📂 Repository Structure
-
-All my custom skills are organized by namespace inside the `skills/` directory to keep the workspace tidy and modular.
-
-### Custom Git & GitHub Skills (`skills/ghr/`)
-
-- **`skills/ghr/gh-split-commits`**: Intelligently splits mixed working tree changes into scoped, Conventional Commits compliant commits.
-- **`skills/ghr/gh-release-create`**: Analyzes git history, calculates the next Semantic Version (SemVer), and automatically creates a GitHub Release.
-- **`skills/ghr/gh-pr-create`**: Automates the creation of professional GitHub Pull Requests.
-- **`skills/ghr/gh-pr-review`**: Performs focused local code reviews on Git/GitHub Pull Requests.
-- **`skills/ghr/gh-issue-create`**: Automatically creates GitHub Issues from code comments or descriptions.
+> **Why this exists:** To offload cognitive overhead and manual steps into precise, safe, and repeatable AI-driven operations that integrate directly with my local environment.
 
 ---
 
-## 🛠️ My Monorepo Guidelines
+## 🎯 The Skill Codex
 
-To maintain these skills easily, I follow these guidelines when creating or updating them:
+Each folder in `skills/` represents a targeted capability. Here is the current directory of my custom skills:
 
-### Architecture & Naming
-- **Namespaces:** My skills reside in namespace subdirectories under `skills/` (e.g., `skills/ghr/`) to facilitate bulk installation and clean organization.
-- **Naming Convention:** Any skill I design for GitHub or Git automation **MUST** be prefixed with `gh-` (e.g., `gh-pr-create`).
-- **Main Config:** The primary configuration, workflows, and prompts for each skill live in `skills/<namespace>/<skill-name>/SKILL.md`.
+| Namespace & Path | Skill Name | Core Capability |
+| :--- | :--- | :--- |
+| `skills/ghr/gh-split-commits` | `gh-split-commits` | Intelligently analyzes and splits complex working trees into clean, scoped, Conventional Commits. |
+| `skills/ghr/gh-release-create` | `gh-release-create` | Scans repository commit logs, calculates the next SemVer bump, and deploys a clean GitHub Release. |
+| `skills/ghr/gh-pr-create` | `gh-pr-create` | Automatically bundles staged work and initiates highly descriptive, professional GitHub Pull Requests. |
+| `skills/ghr/gh-pr-review` | `gh-pr-review` | Runs a localized, focused code review on active pull requests, highlighting critical flaws and fixes. |
+| `skills/ghr/gh-issue-create` | `gh-issue-create` | Converts inline TODO comments or plain-text requirements directly into structured GitHub Issues. |
 
-### Skill Template Standard (`SKILL.md`)
-Every skill I write strictly adheres to a standard template ensuring consistent, safe execution and predictable user interaction:
+---
 
-1. **Frontmatter (YAML):** Contains metadata such as the skill `name` and `description`.
-2. **Objective / Description:** Clear, concise purpose of the skill.
-3. **Safety Rules:** Strict boundaries and operational safety constraints (e.g., restrictions on force pushing, data loss, etc.).
-4. **Workflow:** Step-by-step execution plan, detailing the explicit bash commands and reasoning patterns.
-5. **Communication Contract:** Explicit rules defining how the agent must interact, seek confirmation, or report progress.
+## ⚙️ Integration & Usage
+
+These skills are registered directly by placing them under my agent's active workspace or custom configuration directory (such as `~/.claude/skills/`). 
+
+Whenever my OpenCode agent is active in a project, it loads these `.md` instruction blocks, transforming standard LLM context into a highly deterministic workflow engine:
+
+```bash
+# Example structure inside local environment
+~/.claude/skills/
+├── ghr/
+│   ├── gh-split-commits/
+│   │   └── SKILL.md
+│   └── gh-release-create/
+│       └── SKILL.md
+```
+
+---
+
+## 🏗️ Monorepo Architecture
+
+To ensure these skills remain highly robust and easy to distribute, I maintain a strict architectural pattern:
+
+### 1. Naming & Namespacing
+* **Namespaces:** All skills are nested under logical directory namespaces (e.g., `skills/ghr/` for Git/GitHub related skills) to allow modular installations.
+* **Naming Conventions:** All automation skills interacting with Git/GitHub APIs **MUST** be prefixed with `gh-` (e.g., `gh-pr-create`).
+* **Config Entrypoint:** The core instructions and rules for any skill must reside inside `SKILL.md` under its respective subdirectory.
+
+### 2. The `SKILL.md` Blueprint
+Every custom skill I write strictly implements this five-part schema to guarantee deterministic AI behavior:
+1. **Frontmatter (YAML):** Declares metadata including the formal name and a high-level description.
+2. **Objective:** A definitive statement explaining exactly what the skill achieves.
+3. **Safety Rules:** Strict boundaries defining what the skill is forbidden from doing (e.g., no force pushes, no payload exposure).
+4. **Workflow:** Step-by-step instructions accompanied by explicit shell commands.
+5. **Communication Contract:** Specifies exactly when and how the agent must ask for confirmation or present updates.
 
 ---
 
 ## 🤝 Version Control Conventions
 
-I use **Strict Conventional Commits** to keep my repository history clean and structured:
-- `feat`: A new feature / skill created by me
-- `fix`: A bug fix in a skill or config
-- `docs`: Documentation updates (like this README)
-- `chore`: Maintenance tasks (like .gitignore configuration)
+I enforce **Strict Conventional Commits** across this monorepo to ensure semantic clarity:
 
-These commits are scanned by my release-creation skills to automatically increment SemVer tags and generate changelogs.
+* `feat`: A brand new skill or feature
+* `fix`: A bug fix or workflow correction inside a skill
+* `docs`: Updates to documentation, README, or guides
+* `chore`: Maintenance tasks (like `.gitignore` or workspace adjustments)
+
+*Note: My `gh-release-create` skill parses this commit history to automatically determine the next version of this monorepo.*
+
 
 
